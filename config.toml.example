@@ -1,0 +1,20 @@
+# This is the configuration for your brieftraegerin
+
+address = "list-%"
+domain = "example.com"
+
+[smtp.$smtpname]
+    host = "mail.example.com"
+    port = 587
+    user = "example"
+    password = "0123456789abcdef"
+    from = "forwarder@example.com"  # optional defaults to user
+
+[list.$listname]
+server = "" # optional $smtpname, defaults to first smtp server
+sender = [
+    "valid sender <s@example.com>", # valid senders to this list
+]
+receiver = [
+    "all receivers <receiver@example.com>", # all receivers for this list (senders are not automatically included)
+]

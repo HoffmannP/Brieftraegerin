@@ -20,8 +20,8 @@ type Config struct {
 	List    map[string]Maillist
 }
 
-func readConfig() (config Config) {
-	f, err := os.Open("config.toml")
+func readConfig(filepath string) (config Config) {
+	f, err := os.Open(filepath)
 	if err != nil {
 		log.Fatal(err)
 	}

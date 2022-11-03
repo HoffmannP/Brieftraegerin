@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"flag"
 	"fmt"
 	"io"
 	"log"
@@ -17,7 +18,12 @@ func main() {
 	}
 	log.Println("Read E-Mail from StdIn")
 
-	c := readConfig()
+	var configFile string
+	flag.StringVar(&configFile, "config", "config.toml", "Config file")
+	flag.StringVar(&configFile, "f", "config.toml", "Config file")
+	flag.Parse()
+
+	c := readConfig(configFile)
 	log.Println("Read Config from File")
 
 	list, err := c.selectList(*email)

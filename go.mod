@@ -1,4 +1,4 @@
-module github.com/HoffmannP/Brieftraegerin
+module github.com/HoffmannP/brieftraegerin
 
 go 1.19
 

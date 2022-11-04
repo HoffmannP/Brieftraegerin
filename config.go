@@ -44,12 +44,12 @@ func (c Config) selectList(e mail.Message) (l Maillist, err error) {
 	}
 	name := pattern.FindStringSubmatch(to.Address)[1]
 	if len(name) < 3 {
-		err = fmt.Errorf("Target %s does not match format %s", c.Address+"@"+c.Domain, pattern)
+		err = fmt.Errorf("target list %s does not match format %s", c.Address+"@"+c.Domain, pattern)
 		return
 	}
 	l, ok := c.List[name]
 	if !ok {
-		err = fmt.Errorf("List %s was not found", name)
+		err = fmt.Errorf("list %s was not found", name)
 		return
 	}
 
@@ -73,7 +73,7 @@ func (c Config) selectServer(l Maillist) (s SmtpServer, err error) {
 		}
 	}
 	if !ok {
-		err = errors.New("No SMTP server defined")
+		err = errors.New("no smtp server defined")
 	}
 	return
 }

@@ -26,7 +26,7 @@ func (l Maillist) CheckValidSender(c Config, from string) (err error) {
 			return
 		}
 	}
-	err = fmt.Errorf("From %s is no valid sender address", f.Address)
+	err = fmt.Errorf("sender %s is no valid address", f.Address)
 	return
 }
 
